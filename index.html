@@ -9,11 +9,42 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome cnd link  -->
+    <link rel="stylesheet" href="all.css">
     <style>
         body {
             background: url(images/bg-image.jpg) no-repeat;
             background-size: cover;
             height: 100vh;
+            overflow: hidden;
+        }
+        svg.svg-inline--fa.fa-cloud-sun.fa-w-20 {
+            width: 100px;
+            height: 100px;
+        }
+        svg.svg-inline--fa.fa-cloud-showers-heavy.fa-w-16 {
+            width: 100px;
+            height: 100px;
+        }
+        svg.svg-inline--fa.fa-sun.fa-w-16 {
+            width: 100px;
+            height: 100px;
+        }
+        svg.svg-inline--fa.fa-fire.fa-w-12 {
+            width: 100px;
+            height: 100px;
+        }
+        svg.svg-inline--fa.fa-icicles.fa-w-16 {
+            height: 100px;
+            width: 100px;
+        }
+        svg.svg-inline--fa.fa-cloud-meatball.fa-w-16 {
+            height: 100px;
+            width: 100px;
+        }
+        #cold, #cool, #rainy, #sunny, #hot , #extreme-hot{
+            display: none;
         }
     </style>
 </head>
@@ -24,20 +55,26 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="input-city" placeholder="Enter a location for Weather ...">
                 <div class="input-group-append">
-                    <button onclick="getWeather()" type="button" class="btn btn-danger">Search</button>
+                    <button onclick="getWeather()"  type="button" class="btn btn-danger">Search</button>
                 </div>
             </div>
         </form>
         <div class="weather-status text-white text-center">
-            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <div id="cold"><i class="fas fa-icicles"></i></div>
+            <div id="cool"><i class="fas fa-cloud-meatball"></i></div>
+            <div id="rainy"><i class="fas fa-cloud-showers-heavy"></i></div>
+            <div id="sunny"><i class="fas fa-cloud-sun 7x"></i></div>
+            <div id="hot"><i class="fas fa-sun"></i></div>
+            <div id="extreme-hot"><i class="fas fa-fire"></i></div>            
             <h1 id="city"></h1>
-            <h3><span id="temperature"></span>&deg;C</h3>
+            <h3><span id="temperature"></span></h3>
             <h1 id="status"></h1>
         </div>
     </div>
 
 
     <script src="temperature.js"></script>
+    <script src="all.js"></script>
 </body>
 
 </html>
