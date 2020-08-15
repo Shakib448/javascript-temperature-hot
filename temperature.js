@@ -1,21 +1,14 @@
-const API_KEY = "d8145f1c9f1913e2512cd701c771e6fc"
-
+const API_KEY = "d8145f1c9f1913e2512cd701c771e6fc";
 
 function getWeather(){
     const city = document.getElementById('input-city').value;
 
-    // if(city == ''){
-    //     alert("First write the city name")
-    // }
-    
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        console.log(data)
         document.getElementById('temperature').innerHTML = data.main.temp.toFixed(0) + ' ' + `&deg;C`;
         document.getElementById('city').innerHTML = data.name;
-
-
             if(data.main.temp <= 15){
                 document.getElementById('status').innerHTML = "Cold";
                 document.getElementById('cold').style.display = "block";
@@ -66,6 +59,9 @@ function getWeather(){
                 document.getElementById('extreme-hot').style.display = "block";
             }
         
+    }).catch((error) =>{
+        console.log(error);
+        alert("Please Try to write valid city name. Thanks")
     })
 
 }
