@@ -11,12 +11,12 @@ function getWeather(){
         document.getElementById('status').innerHTML = data.weather[0].main
         const icon = ("<img src='https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png'>")
         document.getElementById('img').innerHTML = icon
-    }).catch((error)=>{
-        console.log(error);
+    }).catch(()=>{
         alert("Please write the valid city name")
     })
-
 }
 
 
-getWeather();
+
+
+
