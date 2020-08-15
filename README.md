@@ -1,1 +1,1 @@
-"# javascript-temperature-hot" 
+<img src="images/project-image.png" />
